@@ -1,0 +1,13 @@
+Options +FollowSymLinks -MultiViews
+
+RewriteEngine On
+RewriteBase /
+
+# Redirect /category.php?category=something to /something
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/+school_metadata\.php\?id=([^&\s]+) [NC]
+RewriteRule ^ /%1? [R=302,L]
+
+# Internally forward /something to /category.php?category=something
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.+)/?$ /school_metadata.php?id=$1 [QSA,NC,L]
