@@ -1,4 +1,4 @@
-A Edmodo Coding Assignment
+An Edmodo Coding Assignment
 
 Author: Cooltey Feng
 
